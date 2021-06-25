@@ -1,0 +1,231 @@
+\documentclass{article}
+
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{setspace}
+
+%\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\usepackage{blindtext,alltt}
+
+\usepackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{array}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage[nottoc]{tocbibind} %añadir las referencias al indice
+
+\usepackage{amsmath}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{THE ODIN PROJECT $|$ \textcolor{BurntOrange}{BECOMING A FULL STACK DEVELOPER}}
+\lfoot{Notes}
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+
+\newcommand{\comment}[1]{}
+\renewcommand{\headrulewidth}{0.5pt} %ancho de la recta del encabezado superior
+
+
+\begin{document}
+	
+	\begin{titlepage}
+		\centering
+		%\includegraphics[width=0.15\textwidth]{UACH.jpg}\par\vspace{1cm}
+		\vfill
+		\vspace{1cm}
+		\includegraphics[width=0.15\textwidth]{odin_logo.png}\par\vspace{1cm}
+		\vspace{1.5cm}
+		{\LARGE\bfseries THE ODIN PROJECT \par}
+		{\scshape\Large Notebook \par}
+		\vspace{2cm}
+		\vfill
+		Name: \par
+		{\footnotesize\itshape León Mora Leonardo Rafael \par}
+		\vfill
+		% Bottom of the page
+		%{\large \today\par}
+	\end{titlepage}
+	
+	\thispagestyle{empty}
+	
+	\tableofcontents
+	
+	\pagebreak
+	\setcounter{page}{1}
+	
+	\section{Introduction}
+	
+	\noindent If you want to work as a web developer you will need a more rigorous understanding of the web itself than you possibly have right now. Knowing this concepts will open a new path that helps you identify what you are doing in each line of code and also it will allow you to talk intelligently with other developers about your work.
+	
+	\subsection{How Does the Web Works}
+	
+	\begin{itemize}
+		\item \textbf{The internet} is a \textit{network} (connection between computers) that goes around the world and is achieved through cables that traverse mountains and oceans from one computer to another. In this case I am talking about the computers that store all the information we see on websites and applications, the kind of computers that are embedded in buildings to support the heaviest part of the web. In order for the data to reach your device, you must have a connection to the web through a cable, radio waves, cellular networks, etc.
+		
+		\item \textbf{The IP Address} also known as the Internet Protocol address, it is a direction assigned to our device creating a path between us and the web, as an address to our home where we can request a package and be sure it will be delivered at our door. Packages are analogous to \textit{packets}, through them you can see a web page correctly constructed. Those packets know where to go because the route created is unique thanks to the IP address.
+		
+		\item \textbf{Router} refers to another computer that recognized all the IP address from others connected to it. The router allows our computers to communicate with the world wide web, including those in which a website lives.
+		
+		\item \textbf{Packets} are letters that contain components of a web page, they travel different paths to get to the computer requesting the information. When a browser receives the packets, its job is to concatenate them all to form the web page. Basically, when a client (computer connected to the web) request a web page, a copy of it is created on the server to which it belongs, this copy is decomposed and stored in different letters, each one of them goes through different ways to reach the client and reassemble the web page (this process takes place in seconds).
+		
+		\item \textbf{The client} refers to a device requesting information to a server through the web.
+		
+		\item \textbf{Server} is a central place where information and programs are stored and accessed by applications over the network.
+		
+		\item \textbf{Web page} is a document which can only be displayed in a web browser. It lives in a website and contains just a section of the entire site.
+		
+		\item \textbf{Web server} refers to a computer hosting one or more websites. ``Hosting'' means that all web pages and their supporting files are available only on that computer. The web server will send all the necessary web pages from the server that contains them. Each web server has different information from each other, which means that a website cannot be registered on two or more servers.
+		
+		\item \textbf{Web browser} is the platform that shows a web page. The browser managed functions like the search engine and also is able to read files like HTMLs or even PDFs. A browser lets users access further pages through hyperlinks.
+		
+		\item \textbf{DNS request} or Domain Name System request is a hierarchical and decentralized naming system for Internet connected resources. DNS is like a directory that contains the domain names along with the resources necessary to locate a website, such as the IP addresses which are associated with them.
+	\end{itemize}
+    
+    \subsection{What is an ISP?}
+    
+    Internet Service Provider is a company that manages some special routers that are all linked together and can also access to others ISPs routers.
+    
+    \section{Command Line Basics}
+    
+    The command line (cmd) is the basis of all the functions that the computer executes, through the command line the entire computer can be managed. Cmd is the best way to communicate with your system, sending direct and specific orders to it.\par
+    Opening the command line could be different depending on the OS or even the computer, mine is a HP laptop using Ubuntu Budgie, to open the cmd I use \textit{ctrl} + \textit{alt} + \textit{t}. Once in the command line you can start making your will, for example; to navigate throughout the directories you should use the {\tt cd} command followed by either the next directory you want to visit or the complete path you want to go.\par
+    If you use {\tt cd} without an argument you will be redirected to the home directory and using {\tt cd..} you will enter to the ``father'' of the current directory. You can also display the name of the directory you are currently in you should use  {\tt pwd} and to display the contents from that directory you can use {\tt dir}, to create a new one you can use {\tt mkdir [name]} for a file you can use {\tt touch [name].[ext]}\par
+    To destroy a directory you can write {\tt rm -r [name]} and for a file do the same but using the extension and avoid the option like this: {\tt rm [name].[ext]}. And to rename a directory or file you can use the command {\tt mv} as follows {\tt mv /home/user/name\_a /home/user/name\_b}.
+    
+    \subsection{Git Basics}
+    
+    Git is a Version Control System (VCS) that store its data in a series of snapshots. Git thinks about its data like a stream of snapshots. Each series is independent from one to another so, if you have 3 series and you need to modify or create a new version of the project, that modification will the fourth group of files on that sequence of series. \par
+    
+    \subsubsection{Git and Text Editors}
+	
+	
+	Text editors rewrite data over the same file you are working with, the workflow is moving forward without keeping track of the old data so, if you close the file and just the you need a younger version of that document for some reason, you would have a hard time recovering that data. These kind of things are different with Git because its way of working with files. Git see every new modification as a new document but it creates a timeline that associate all those versions of the file with a date.\par
+	
+	If you need a previous version of a project that has already a lot of modifications, using Git you can go back to the modification you are working with. This does not happen with text editors.
+	
+	\subsubsection{Does Git and GitHub Work at a local or remote level?}
+	
+	Git works at a local level, using the computers memory to store files and work with the project we are dealing with.\par
+	
+	Otherwise, GitHub works at a remote level, stores files online and provides a platform where a team of developers can work together, allowing them to delegate specific areas to the right developer and quickly improve the project.\par
+
+    If you mix Git and GitHub the result would be a remote environment that you can modify trough a local level.
+    
+    \subsubsection{Git for Individual Developers}
+    
+    Working be yourself as an individual developer can be better using Git, you will need to be organized with your project and be sure that every change is correctly adapted to it. By using Git you can create a new branch alongside the main one, if you do this the project will have a save point just in case the program crashes due to a new modification. Now you can start messing things up again with no worries.
+    
+    \subsubsection{Git and GitHub for a Team of Developers}
+    
+    When there are to many people working on the same project things get a little complicate, sometimes the changes are made over old versions of the project because they get together a couple of hours per day and it is difficult to cover all the topics, so everybody goes home and start working on the project but maybe they where in the bathroom or watching the new Harley on instagram (or both) when the changes were in course, so they have lost track of the new things that took place on the project.\par
+    
+    GitHub provides the latest version of the project every time one of the members needs it, for a team this is very useful because in addition to pulling the repository, they can see what the others are doing and focused on the right area.\par
+    
+    When working with the project from a computer is when Git takes action to manage the repository, speeding up the modification process. Once the changes are ready, we can submit it to GitHub and call for a pull request so that the modification can be in the original project.
+    
+    \subsubsection{Git Command-Line Fundamentals}
+    
+    \begin{itemize}
+    	\item \textbf{On Initial Install:}\\
+    	    \begin{doublespace}
+    	      {\tt git --version} $\rightarrow$ checks the current version of the installed locally Git.\\
+    	      {\tt git config --global user.name "<your name>"} $\rightarrow$ sets up the username.\\
+    	      {\tt git config --global user.email "<your email direction>"} $\rightarrow$ sets up the user's mail.\\
+    	      {\tt git config --list} $\rightarrow$ lists all the Git configurations.
+    	    \end{doublespace}
+        
+    	\item \textbf{Help with Commands:}\\
+    	    \begin{doublespace}
+    	    	{\tt git help <verb>} or {\tt git <verb> --help} $\rightarrow$ shows a guide explaining the verb.
+    	    \end{doublespace}
+        
+        \item \textbf{For Initializing the Project:}\\
+            \begin{doublespace}
+        	    {\tt git init} $\rightarrow$ initializes the Git repo in the current directory.\\
+        	    {\tt touch .gitignore} $\rightarrow$ creates a Git ignore file.\\
+        	    {\tt git status} $\rightarrow$ checks the current working tree (both Git and local).
+            \end{doublespace}
+        
+        \item \textbf{Adding Files:}\\
+        	{\tt git add -A} $\rightarrow$ adds all of the files for committing.
+        	
+        \item \textbf{Removing Files:}\\
+            \begin{doublespace}
+        	    {\tt git reset} $\rightarrow$ removes files to be committed.\\
+        	    {\tt git reset <some\_file.js>} $\rightarrow$ removes some\_file.js from the commit preparation.
+            \end{doublespace}
+    	
+    	\item \textbf{Committing:}\\
+    	    {\tt git commit -m "<Insert commit message>"} $\rightarrow$ makes the commitment and adds a message.
+    	
+    	\item \textbf{Check Log:}\\
+    	    {\tt git log} $\rightarrow$ renders commit ids, authors, dates, etc.
+    	    
+    	\item \textbf{Clone a Remote Repo:}\\
+    	    {\tt git clone <url> <direction>} $\rightarrow$ saves a copy of the repo indicated in the url within the directory at the address.
+    	    
+    	\item \textbf{View Info about the Repo:}\\
+    	    \begin{doublespace}
+    	    	{\tt git remote -v} $\rightarrow$ lists info about the repo.\\
+    		    {\tt git branch -a} $\rightarrow$ lists all of the branches.
+    	    \end{doublespace}
+        
+        \item \textbf{View Changes:}\\
+            {\tt git diff} $\rightarrow$ shows the difference between the new file and the old one.
+            
+        \item \textbf{Pulling the Repo (always pull before pushing):}\\
+            {\tt git pull <remote repo name> <name of the branch>} $\rightarrow$ pulls the latest version of the repository.
+        
+        \item \textbf{Pushing the Repo (right after pulling it):}\\
+            {\tt git push <remote repo name> <name of the branch>} $\rightarrow$ pushes the repository.
+            
+        \item \textbf{First Time Push of the Branch:}\\
+            {\tt git push -u <remote repo name> <name of the branch>} $\rightarrow$ ``-u'' coordinates the two branches (local and on server).
+            	
+        \item \textbf{Branches:}\\
+            \begin{doublespace}
+                {\tt git branch <name of the branch>} $\rightarrow$ creates a new branch.\\
+                {\tt git checkout <name of the branch>} $\rightarrow$ checks out a branch.
+    	    \end{doublespace}
+    \end{itemize}
+
+    \subsubsection{Merging and Deleting Branches}
+    
+    Consider both branch and the remote repository called "main" and "origin" respectively and another branch created by us called "nmod".\vspace{0.5cm}\\
+    
+    Merge a branch:
+    \begin{itemize}
+    	\item {\tt git checkout main}
+    	\item {\tt git pull origin main}
+    	\item {\tt git branch --merged} (see which branches are merged).
+    	\item {\tt git merge nmod}
+    	\item {\tt git push origin main}
+    \end{itemize}
+
+    Delete a branch:
+    \begin{itemize}
+	    \item {\tt git branch -d nmod} (this deletes it locally).
+	    \item {\tt git branch -a} (check the repo branches).
+	    \item {\tt git push origin --delete nmod} (this deletes it from the repo).
+    \end{itemize}
+    
+	\pagebreak
+	
+	\bibliography{sample}%referencia en indice
+	\begin{thebibliography}{9}
+		\bibitem{prosthesis} 
+		Petrini, F. M., Valle, G., Bumbasirevic, M., Barberi, F., Bortolotti, D., Cvancara, P., ... \& Raspopovic, S. (2019). Enhancing functional abilities and cognitive integration of the lower limb prosthesis. Science translational medicine, 11(512).
+		
+		\bibitem{prosthesis_2} 
+		Song, H., Israel, E., Srinivasan, S., \& Herr, H. (2020). Pressure based MRI-compatible muscle fascicle length and joint angle estimation. Journal of neuroengineering and rehabilitation, 17(1), 1-11.
+		
+		\bibitem{in_bio} 
+		Ingeniería biónica. (2020, 20 de noviembre). Wikipedia, La enciclopedia libre. Fecha de consulta: marzo 22, 2021 desde
+		\url{https://es.wikipedia.org/w/index.php?title=Ingenier%C3%ADa_bi%C3%B3nica&oldid=131085476.}
+		\end{thebibliography}
+		
+	\end{document}
