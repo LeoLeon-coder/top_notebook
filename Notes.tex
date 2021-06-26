@@ -59,7 +59,7 @@
 	
 	\section{Introduction}
 	
-	\noindent If you want to work as a web developer you will need a more rigorous understanding of the web itself than you possibly have right now. Knowing this concepts will open a new path that helps you identify what you are doing in each line of code and also it will allow you to talk intelligently with other developers about your work.
+	\noindent If you want to work as a web developer you will need a more rigorous understanding of the web itself than you possibly have right now. Knowing this concepts will open a new path that will help you to identify what you are doing in each line of code and also it will allow you to talk intelligently with other developers about your work.
 	
 	\subsection{How Does the Web Works}
 	
@@ -92,9 +92,47 @@
     \section{Command Line Basics}
     
     The command line (cmd) is the basis of all the functions that the computer executes, through the command line the entire computer can be managed. Cmd is the best way to communicate with your system, sending direct and specific orders to it.\par
-    Opening the command line could be different depending on the OS or even the computer, mine is a HP laptop using Ubuntu Budgie, to open the cmd I use \textit{ctrl} + \textit{alt} + \textit{t}. Once in the command line you can start making your will, for example; to navigate throughout the directories you should use the {\tt cd} command followed by either the next directory you want to visit or the complete path you want to go.\par
-    If you use {\tt cd} without an argument you will be redirected to the home directory and using {\tt cd..} you will enter to the ``father'' of the current directory. You can also display the name of the directory you are currently in you should use  {\tt pwd} and to display the contents from that directory you can use {\tt dir}, to create a new one you can use {\tt mkdir [name]} for a file you can use {\tt touch [name].[ext]}\par
-    To destroy a directory you can write {\tt rm -r [name]} and for a file do the same but using the extension and avoid the option like this: {\tt rm [name].[ext]}. And to rename a directory or file you can use the command {\tt mv} as follows {\tt mv /home/user/name\_a /home/user/name\_b}.
+    Opening the command line could be different depending on the OS or even the computer, mine is a HP laptop using Ubuntu Budgie, to open the cmd I use {\tt ctrl + alt + t}. Once in the command line you can start making your will.
+    
+    \subsubsection{Useful Commands}
+    
+    \begin{itemize}
+    	\item {\tt pwd} which means Present Working Directory, this command is to find out where you are. {\tt pwd} will list the ``logical'' path of your current directory.\\
+    	you should use {\tt pwd -P} if you want to see the actual physical path. This command shows the full path to your current working directory.
+    	
+    	\item {\tt ls} is used to list files and directories in your current directory, or another.\\
+    	{\tt ls <path>} will let you pass it a path to work on without being in the directory.\\
+    	{\tt ls -a} this option ``{\tt -a}'' is often used to show all the files, even those that aren't visible (files that are prefixed with a dot ``.''). The option along with the command shows both ``visible'' and ``hidden'' files/directories.\\
+    	{\tt ls -l} shows a list of files and directories in long form, with more details. The information displayed for each file is: file mode, number of links, owner name, group name, number of bytes in the file, month, day, hour and the path name.\\
+    	{\tt ls -lh} if you want to see the size of the file in human readable terms, such as 1.7K or 35M. This information is modified by using the option {\tt -h}.\\
+    	{\tt ls -lhs} for sorting the list {\tt -S} (Capital S), will do the job.\\
+    	{\tt ls -lt} if you want to sort by last time the files were modified. To do this we can use the {\tt -t} flag.
+    	{\tt ls -lr} through the option {\tt -r} you can sort the list in reverse.
+    	
+    	\item {\tt ln <file\_a>.<ext> <file\_b>.<ext>} links, allow us to create an association from one file or directory to another. By default the {\tt ln} command will create a hard link between the files but it cannot create a link between directories.\\
+    	{\tt ln -f <file\_a>.<ext> <file\_b>.<ext>} is used to force a link.
+    	{\tt ln -s <file\_a>.<ext> <file\_b>.<ext>} this flag ({\tt -s}) creates a link to a directory. This can also be used for linking to files as well, not just directories. Symbolic links can also link to files or directories on other file systems. This makes symbolic links (symlinks) more powerful, and more common than the default hard links.
+    	
+    	\item {\tt cd /User/home/etc} is used to change directories.\\
+    	{\tt cd ..} go backwards, instead of passing the command a full path to where you want to go. Using ``..'' flag you can go to the parent directory of the current one.
+    	{\tt cd} will navigate to your home directory.
+    	
+    	\item {\tt mkdir <directory\_name>} is used to create a directory.\\
+    	{\tt mkdir -p <directory\_a>/<directory\_b>/<directory\_c>} the flag {\tt -p} will allow us to create nested directories.\\
+    	{\tt mkdir -v <directory\_name>} displays a verbose output. Adding the {\tt -v} flag will print the results of {\tt mkdir} to the console.
+    	
+    	\item {\tt cp <file\_a>.<ext> <file\_b>.<ext>} copying files and directories with the {\tt cp} command.\\
+    	{\tt cp <file\_a>.<ext> <file\_b>.<ext> <directory\_name>} {\tt cp} will allows you to list several files you would like to copy. When you do this, however, the last argument must be a directory.\\
+    	{\tt cp *.<ext> <directory\_name>} with this option we can also pass simple patterns to {\tt cp} copying all files with the same extension.\\
+    	{\tt cp -v <file\_a>.<ext> <file\_b>.<ext>} the {\tt cp} command supports verbose output.\\
+    	{\tt cp -Rv <directory\_a> <directory\_b>} the {\tt -R} flag is used to copy directories. This option is recursively copying the directory's contents to the new one.\\
+    	{\tt cp -f <file\_a>.<ext> <file\_b>.<ext>} in this case, the flag {\tt -f} is forcing the file to be copied, even after a ``Permission denied'' message that results when copying files from different users.\\
+    	{\tt cp -i <file\_a>.<ext> <file\_b>.<ext>} the {\tt -i} flag is used to confirm the overwriting of a file.
+    	
+    	\item {\tt rm -v <file\_a>.<ext>} will remove files and folders. It supports the same flags and arguments as the {\tt cp} command.
+    	
+    	\item {\tt mv -v <file\_a>.<ext> <file\_b>.<ext>} supports the same flags as {\tt cp}.
+    \end{itemize}
     
     \subsection{Git Basics}
     
