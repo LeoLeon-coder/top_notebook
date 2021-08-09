@@ -18,6 +18,7 @@
 \usepackage[nottoc]{tocbibind} %añadir las referencias al indice
 
 \usepackage{amsmath}
+\usepackage{listings}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -279,7 +280,61 @@
     	\footnotesize Figure 2
     \end{center}
 
-    Attributes contain extra information about the element that you don't want to appear in the actual content. Here, {\tt class} is the attribute \textit{name} and {\tt editor-note} is the attribute \textit{value}. The {\tt class} attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same class value) with style information and other things.
+    Attributes contain extra information about the element that you don't want to appear in the actual content. Here, {\tt class} is the attribute \textit{name} and {\tt editor-note} is the attribute \textit{value}. The {\tt class} attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same class value) with style information and other things. \par
+    
+    A short document *.htm or *.html, with some code to begin with could be something like:
+    
+    \begin{lstlisting}[language=html]
+<html>
+  <!-- 
+  this is a comment
+  -->
+  <head>
+    <title>A Web Page Example</title>
+  </head>
+  <body>
+    <h1>First Heading</h1>
+    <p>One paragraph of text.</p>
+    <p>Another paragraph of text, containing an emphasized <em>word</em>.</p>
+    <h2>A list of items</h2>
+    <ul>
+      <li>First item</li>
+      <li>Second item</li>
+      <li>Third item</li>
+      </ul>
+    </body>
+</html>
+    \end{lstlisting}
+
+    You can add to this document almost everything you want, the following list contains some elements that could be in the code:
+
+    \begin{itemize}
+    	\item Images: {\tt <img src="https://www.bit.ly/fcc-relaxing-cat" alt="about the image">}\\
+    	
+    	The source attribute ({\tt src}) refers to the place where the image lives and the {\tt alt} attribute requires some text for screen readers to improve accessibility and is displayed if the image fails to load.
+    	
+    	\item Anchor: {\tt <a href='https://www.freecatphotoapp.com'>cat photos</a>}\\
+    	
+    	A link or reference to a page shown as ``\underline{cat photos}''.
+    	
+    	\item New tab: {\tt <a href="https://www.freecatphotoapp.com" target="\_blank">cat photos</a>}\\
+    	
+    	The {\tt target} attribute with the value of ``\_blank'' creates a new tab in the browser for the specified link.
+    	
+    	\item Nest your image with an ``{\tt a}'' element: {\tt <a href="\#"><img src="https://www.bit.ly/fcc-\\running-cats" alt="Three kittens running towards the camera."></a>}\\
+    	
+    	The image will be like a button for the specified link.
+    \end{itemize}
+
+    \noindent You can nest links within other text elements
+    
+    \begin{lstlisting}[language=html]
+    <p>
+      Here's a <a target="_blank" href="the_link"> link to the_link</a>.
+    </p>
+    \end{lstlisting}
+
+    \noindent Sometimes you want to add ``{\tt a}'' elements to your website before you know where they will link. This should be easy by using the hash symbol ``\#'' as the value for the {\tt href} attribute. This is known as \textbf{Dead Links}.
     
 	\pagebreak
 	
