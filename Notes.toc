@@ -13,4 +13,6 @@
 \contentsline {subsubsection}{\numberline {2.3.6}Merging and Deleting Branches}{6}%
 \contentsline {section}{\numberline {3}Introduction to The Front End}{6}%
 \contentsline {subsection}{\numberline {3.1}Basics of HTML}{6}%
-\contentsline {section}{References}{9}%
+\contentsline {subsubsection}{\numberline {3.1.1}Nested Links}{8}%
+\contentsline {subsubsection}{\numberline {3.1.2}Radio Buttons}{9}%
+\contentsline {section}{References}{10}%

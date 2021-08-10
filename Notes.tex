@@ -18,7 +18,10 @@
 \usepackage[nottoc]{tocbibind} %añadir las referencias al indice
 
 \usepackage{amsmath}
-\usepackage{listings}
+\usepackage{listings} %lineas de codigo
+
+\usepackage{xcolor, soul} %para subrayar y colorear las letras
+\sethlcolor{gray}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -280,11 +283,12 @@
     	\footnotesize Figure 2
     \end{center}
 
-    Attributes contain extra information about the element that you don't want to appear in the actual content. Here, {\tt class} is the attribute \textit{name} and {\tt editor-note} is the attribute \textit{value}. The {\tt class} attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same class value) with style information and other things. \par
+    Attributes contain extra information about the element that you don't want to appear in the actual content. Here, \textcolor{red}{{\tt class}} is the attribute \textit{name} and {\tt editor-note} is the attribute \textit{value}. The \textcolor{red}{{\tt class}} attribute allows you to give the element a non-unique identifier that can be used to target it (and any other elements with the same class value) with style information and other things. \par
     
     A short document *.htm or *.html, with some code to begin with could be something like:
     
     \begin{lstlisting}[language=html]
+<!DOCTYPE html>
 <html>
   <!-- 
   this is a comment
@@ -311,7 +315,7 @@
     \begin{itemize}
     	\item Images: {\tt <img src="https://www.bit.ly/fcc-relaxing-cat" alt="about the image">}\\
     	
-    	The source attribute ({\tt src}) refers to the place where the image lives and the {\tt alt} attribute requires some text for screen readers to improve accessibility and is displayed if the image fails to load.
+    	The source attribute (\textcolor{red}{{\tt src}}) refers to the place where the image lives and the \textcolor{red}{{\tt alt}} attribute requires some text for screen readers to improve accessibility and is displayed if the image fails to load.
     	
     	\item Anchor: {\tt <a href='https://www.freecatphotoapp.com'>cat photos</a>}\\
     	
@@ -319,13 +323,35 @@
     	
     	\item New tab: {\tt <a href="https://www.freecatphotoapp.com" target="\_blank">cat photos</a>}\\
     	
-    	The {\tt target} attribute with the value of ``\_blank'' creates a new tab in the browser for the specified link.
+    	The \textcolor{red}{{\tt target}} attribute with the value of ``\_blank'' creates a new tab in the browser for the specified link.
     	
-    	\item Nest your image with an ``{\tt a}'' element: {\tt <a href="\#"><img src="https://www.bit.ly/fcc-\\running-cats" alt="Three kittens running towards the camera."></a>}\\
+    	\item Nest your image with an \textcolor{blue}{{\tt a}} element: {\tt <a href="\#"><img src="https://www.bit.ly/fcc-\\running-cats" alt="Three kittens running towards the camera."></a>}\\
     	
     	The image will be like a button for the specified link.
+    	
+    	\item Text Field: {\tt <input type="text" placeholder="this is placeholder text" required>
+    	}\\
+    
+        The placeholder attribute is optional, the required attribute ask the user for an input to be submitted.
+        
+        \item Form Element:
+    \begin{lstlisting}[language=html]
+    	<form action="/url-where-you-want-to-submit-form-data">
+    	  <input type="text" placeholder="Enter-Info" required>
+    	</form>
+    \end{lstlisting}
+    
+    This is a web form that actually submit data to a server using nothing more than pure HTML. You can do this by specifying an \textcolor{red}{{\tt action}} attribute on your \textcolor{blue}{{\tt form}} element. The value for \textcolor{red}{{\tt action}} will be the link where we want the information to be submitted.
+    
+    \item Button:{\tt <button type="submit">this button submits the form</button>}
+    
+    This button goes inside the form element and it's function is to send the form to the specified link.
+    
+    
     \end{itemize}
 
+    \subsubsection{Nested Links}
+    
     \noindent You can nest links within other text elements
     
     \begin{lstlisting}[language=html]
@@ -334,7 +360,27 @@
     </p>
     \end{lstlisting}
 
-    \noindent Sometimes you want to add ``{\tt a}'' elements to your website before you know where they will link. This should be easy by using the hash symbol ``\#'' as the value for the {\tt href} attribute. This is known as \textbf{Dead Links}.
+    \noindent Sometimes you want to add \textcolor{blue}{{\tt a}} elements to your website before you know where they will link. This should be easy by using the hash symbol ``\#'' as the value for the \textcolor{red}{{\tt href}} attribute. This is known as \textbf{Dead Links}.
+    
+    \subsubsection{Radio Buttons}
+    
+    \noindent You can use radio buttons for questions where you want the user to only give you one answer out of multiple options.\par
+    
+    Radio buttons are a type of \textcolor{blue}{{\tt input}}.\\
+    
+    Each of your radio buttons can be nested within its own \textcolor{blue}{{\tt label}} element. By wrapping an \textcolor{blue}{{\tt input}} element inside of a \textcolor{blue}{{\tt label}} element it will automatically associate the radio button input with the label element surrounding it.\\
+    
+    All related radio buttons should have the same \textcolor{red}{{\tt name}} attribute to create a radio button group. By creating a radio group, selecting any single radio button will automatically deselect the other buttons within the same group ensuring only one answer is provided by the user.\\
+    
+    \noindent Here is an example of a radio button:
+    
+    \begin{lstlisting}[language=html]
+<label for="indoor">
+    <input id="indoor" type="radio" name="indoor-outdoor" value="indoor">Indoor
+</label>
+    \end{lstlisting}
+
+    It is considered best practice to set a for attribute on the label element, with a value that matches the value of the id attribute of the input element. This allows assistive technologies to create a linked relationship between the label and the related input element.
     
 	\pagebreak
 	
