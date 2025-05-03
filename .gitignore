@@ -1,0 +1,11 @@
+# ignore ALL .log, .blg, .toc, .aux, .bbl, .bcf, .out, .fls, .fdb_latexmk, .synctex.gz files
+*.log
+*.blg
+*.toc
+*.aux
+*.bbl
+*.bcf
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
